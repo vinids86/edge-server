@@ -6,8 +6,6 @@ management:
     enabled: false
 
 zuul:
-  ignored-services: "*"
+  ignoredServices: '*'
   routes:
-    composite-product-service:
-      path: /product-composite/**
-      stripPrefix: true
+    composite-product-service: /composite-product-service/**
