@@ -1,0 +1,13 @@
+server:
+  port: 8765
+
+management:
+  security:
+    enabled: false
+
+zuul:
+  ignored-services: "*"
+  routes:
+    composite-product-service:
+      path: /product-composite/**
+      stripPrefix: true
