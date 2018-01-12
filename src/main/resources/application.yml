@@ -5,7 +5,19 @@ management:
   security:
     enabled: false
 
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   ignoredServices: '*'
+  prefix: /api
   routes:
-    composite-product-service: /composite-product-service/**
+    product-api-service: /products/**
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
